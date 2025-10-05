@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login">
+        <h2>Crop Prediction</h2>
+        <form action="/predict" method="post">
+            <label for="N">Nitrogen (N):</label>
+            <input type="number" id="N" name="N" required><br><br>
+            <label for="P">Phosphorus (P):</label>
+            <input type="number" id="P" name="P" required><br><br>
+            <label for="K">Potassium (K):</label>
+            <input type="number" id="K" name="K" required><br><br>
+            <label for="temperature">Temperature:</label>
+            <input type="number" id="temperature" name="temperature" required><br><br>
+            <label for="humidity">Humidity:</label>
+            <input type="number" id="humidity" name="humidity" required><br><br>
+            <label for="ph">pH:</label>
+            <input type="number" id="ph" name="ph" required><br><br>
+            <label for="rainfall">Rainfall:</label>
+            <input type="number" id="rainfall" name="rainfall" required><br><br>
+            <input type="submit" value="Predict">
+        </form>
+        
+        <!-- Move the results inside the login div and add condition -->
+        {% if prediction_text %}
+            <div id="results">
+                <div class="prediction-result">
+                    <h3>🌾 Your Predicted Crop: {{ prediction_text }}</h3>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

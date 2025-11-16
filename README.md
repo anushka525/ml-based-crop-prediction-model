@@ -85,7 +85,7 @@ Run the Application:
 **Bash**
 
 python app.py
-Access the App: Open your web browser and navigate to the local server address: http://127.0.0.1:5000/.
+Access the App: Open your web browser and navigate to the local server address.
 
 **📂 Project File Structure**
 **app.py:** Core application logic, routing, and model prediction.
